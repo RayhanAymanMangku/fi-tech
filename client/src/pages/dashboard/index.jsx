@@ -2,6 +2,7 @@ import React from 'react'
 import { SidebarWithLogo } from '../../layouts/Sidebar/sidebar';
 import TambahProdukPage from '../TambahProduk';
 import ProfilePage from '../profile';
+import HomeAdmin from '../admin';
 
 const DashboardPage = () => {
     const [activeContent, setActiveContent] = React.useState("beranda");
@@ -17,6 +18,8 @@ const DashboardPage = () => {
                         <SidebarWithLogo handleTabChange={handleTabChange} />
                     </div>
                     <div className="h-full w-full  " >
+
+                        {activeContent === "home" && <HomeAdmin />}
                         {activeContent === "produk" && <TambahProdukPage />}
                         {activeContent === "profile" && <ProfilePage />}
                     </div>
