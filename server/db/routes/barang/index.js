@@ -5,5 +5,9 @@ const barangController = require("../../controllers/barang");
 router.get("/api/v2/data-barang", barangController.getDataBarang);
 router.post("/api/v2/data-barang", barangController.createBarang);
 router.delete("/api/v2/data-barang/:idBarang", barangController.deleteBarang);
+router.get(
+  "/api/v2/barang-distribution",
+  barangController.getBrandDistribution
+);
 
 module.exports = router;

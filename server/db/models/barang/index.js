@@ -26,9 +26,14 @@ function deleteBarang(idBarang) {
   return knex("barang").where({ idBarang }).del();
 }
 
+function getBrandDistribution() {
+  return knex("barang").select("Merek", "Harga as price");
+}
+
 module.exports = {
   getDataBarang,
   getDataBarangById,
   createBarang,
   deleteBarang,
+  getBrandDistribution,
 };
